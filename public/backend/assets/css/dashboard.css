@@ -1,0 +1,20 @@
+body:not(.modal-open) .layout-content-navbar .layout-navbar {
+    z-index: 99;
+}
+
+.swal2-toast h2:where(.swal2-title)
+ {
+    margin: -5px 1em 0px !important;
+}
+
+.header_info {
+    display: flex;
+    justify-content: space-between;
+}
+.header_info h5 {
+    padding-top: 10px;
+    margin-bottom: -15px;
+}
+a.btn.btn-sm.btn-primary {
+    border-radius: 0;
+}
