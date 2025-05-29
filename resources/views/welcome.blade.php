@@ -724,7 +724,7 @@
 						</div>
 						<ul class="postcard__tagbox">
 							<li class="tag__item">
-								<a href="volunteer_regi.html"><i class="fa-solid fa-user"></i>&nbsp; Join Us Today
+								<a href="{{ route('volunteer_regi') }}"><i class="fa-solid fa-user"></i>&nbsp; Join Us Today
 								</a>
 							</li>
 					</div>

@@ -1,15 +1,21 @@
 <?php
 
 use App\Http\Controllers\backend\AboutUsController;
+use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\ChairPersionController;
 use App\Http\Controllers\backend\ContactController as BackendContactController;
+use App\Http\Controllers\backend\DonateNowController;
 use App\Http\Controllers\backend\EventNoticeController;
+use App\Http\Controllers\backend\GalleryController;
 use App\Http\Controllers\backend\MissionVissionController;
+use App\Http\Controllers\backend\NewsAndArticleController;
 use App\Http\Controllers\backend\ServicesController;
 use App\Http\Controllers\backend\SliderController;
 use App\Http\Controllers\backend\TopHeaderController;
+use App\Http\Controllers\backend\VolunteerController;
 use App\Http\Controllers\frontend\ContactController;
 use App\Http\Controllers\frontend\PageController;
+use App\Http\Controllers\frontend\VolunteerRegiController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -92,6 +98,51 @@ Route::middleware(['auth'])->group(function () {
     Route::get('dashboard/service/edit/{id}',[ServicesController::class,'edit'])->name('editService');
     Route::post('dashboard/service/update/{id}',[ServicesController::class,'update'])->name('updateService');
     Route::delete('dashboard/service/delete/{id}',[ServicesController::class,'destroy'])->name('deleteService');
+
+    // Gallry 
+    Route::get('dashboard/gallery',[GalleryController::class,'index'])->name('backendGllery');
+    Route::get('dashboard/gallery/create',[GalleryController::class,'create'])->name('createGallery');
+    Route::get('dashboard/gallery/view/{id}',[GalleryController::class,'view'])->name('viewGallery');
+    Route::post('dashboard/gallery/save',[GalleryController::class,'store'])->name('storeGallery');
+    Route::get('dashboard/gallery/edit/{id}',[GalleryController::class,'edit'])->name('editGallery');
+    Route::post('dashboard/gallery/update/{id}',[GalleryController::class,'update'])->name('updateGallery');
+    Route::delete('dashboard/gallery/delete/{id}',[GalleryController::class,'destroy'])->name('deleteGallery');
+
+
+    // Gallry 
+    Route::get('dashboard/category',[CategoryController::class,'index'])->name('category');
+    Route::get('dashboard/category/create',[CategoryController::class,'create'])->name('createCategory');
+    Route::post('dashboard/category/store',[CategoryController::class,'store'])->name('storeCategory');
+    Route::delete('dashboard/category/delete/{id}',[CategoryController::class,'destroy'])->name('deleteCategory');
+
+
+        
+    // Event Notice
+    Route::get('dashboard/news-and-articles',[NewsAndArticleController::class,'index'])->name('newsAndArticles');
+    Route::get('dashboard/news-and-articles/create',[NewsAndArticleController::class,'create'])->name('createNewsAndArticles');
+    Route::get('dashboard/news-and-articles/view/{id}',[NewsAndArticleController::class,'view'])->name('viewNewsAndArticles');
+    Route::post('dashboard/news-and-articles/save',[NewsAndArticleController::class,'store'])->name('storeNewsAndArticles');
+    Route::get('dashboard/news-and-articles/edit/{id}',[NewsAndArticleController::class,'edit'])->name('editNewsAndArticles');
+    Route::post('dashboard/news-and-articles/update/{id}',[NewsAndArticleController::class,'update'])->name('updateNewsAndArticles');
+    Route::delete('dashboard/news-and-articles/delete/{id}',[NewsAndArticleController::class,'destroy'])->name('deleteNewsAndArticles');
+
+        
+    // Volunteer
+
+    Route::get('dashboard/volunteer',[VolunteerController::class,'index'])->name('volunteerBackend');
+    Route::get('dashboard/volunteer/view/{id}',[VolunteerController::class,'show'])->name('viewVolunteerSingle');
+    Route::get('dashboard/volunteer/status/{id}',[VolunteerController::class,'toggleStatus'])->name('toggleStatusVolunteerSingle');
+    Route::delete('dashboard/volunteer/delete/{id}',[VolunteerController::class,'destroy'])->name('volunteerSingleDestroy');
+
+
+    // Donate Now Section
+    Route::get('dashboard/donate-now',[DonateNowController::class,'index'])->name('donateNow');
+    Route::get('dashboard/donate-now/create',[DonateNowController::class,'create'])->name('createDonateNow');
+    Route::get('dashboard/donate-now/view/{id}',[DonateNowController::class,'view'])->name('viewDonateNow');
+    Route::post('dashboard/donate-now/save',[DonateNowController::class,'store'])->name('storeDonateNow');
+    Route::get('dashboard/donate-now/edit/{id}',[DonateNowController::class,'edit'])->name('editDonateNow');
+    Route::post('dashboard/donate-now/update/{id}',[DonateNowController::class,'update'])->name('updateDonateNow');
+    Route::delete('dashboard/donate-now/delete/{id}',[DonateNowController::class,'destroy'])->name('deleteDonateNow');
     
 });
 
@@ -125,6 +176,10 @@ Route::middleware(['auth'])->group(function () {
 
 Route::post('/contact',[ContactController::class,'submitUserData'])->name('submitUserData');
 
+Route::post('/volunteer-registration-submit',[VolunteerRegiController::class,'store'])->name('storeVolunteerRegi');
+
+
+
 // ================================= FRONTEND STARTED ===================================================================
 
 Route::get('/donation',[PageController::class,'donation'])->name('donation');
@@ -149,7 +204,7 @@ Route::get('/trustees',[PageController::class,'trustees'])->name('trustees');
 
 Route::get('/volunteer',[PageController::class,'volunteer'])->name('volunteer');
 
-Route::get('/volunteer_regi',[PageController::class,'volunteer_regi'])->name('volunteer_regi');
+Route::get('/volunteer-registration',[PageController::class,'volunteer_regi'])->name('volunteer_regi');
 
 // ================================= FRONTEND END =======================================================================
 
