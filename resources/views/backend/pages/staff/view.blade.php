@@ -3,8 +3,8 @@
 
 @section('content')
     <div class="card">
-        <h5 class="card-header">Board Of Trustees - Details</h5>
-        <a href="{{ route('editBOT',$data->id) }}" class="btn btn-sm btn-primary" style="width: 70px;margin-left: 25px;border-radius: 5px;">Edit</a>
+        <h5 class="card-header">Staff - Details</h5>
+        <a href="{{ route('editStaff',$data->id) }}" class="btn btn-sm btn-primary" style="width: 70px;margin-left: 25px;border-radius: 5px;">Edit</a>
         <div class="card-body">
             <div class="row">
             <div class="col-lg-12 mb-12 mb-xl-0">
@@ -17,7 +17,7 @@
                     <a href="javascript:void(0);" class="list-group-item list-group-item-action ">X.COM (Twitter):  ➠ {{ $data->twitter }}</a>
                     <a href="javascript:void(0);" class="list-group-item list-group-item-action ">Instagram: ➠ {{ $data->insta }}</a>
                     <a href="javascript:void(0);" class="list-group-item list-group-item-action ">Youtube: ➠ {{ $data->yt }}</a>
-                    <a href="javascript:void(0);" class="list-group-item list-group-item-action "> <img src="{{ asset('images/bot/'.$data->image) }}" alt="image" width="250"></a>
+                    <a href="javascript:void(0);" class="list-group-item list-group-item-action "> <img src="{{ asset('images/staff/'.$data->image) }}" alt="image" width="250"></a>
                 </div>
                 </div>
             </div>

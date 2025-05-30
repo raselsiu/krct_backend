@@ -969,3 +969,7 @@ div:where(.swal2-container).swal2-top-end>.swal2-popup, div:where(.swal2-contain
 .footer_list li a{
   color: #ffffff;
 }
+
+select#sex {
+    padding: 5px;
+}

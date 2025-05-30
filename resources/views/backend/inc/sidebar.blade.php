@@ -133,7 +133,7 @@
       </a>
       <ul class="menu-sub">
         <li class="menu-item active">
-          <a href="{{ route('backendGllery') }}" class="menu-link">
+          <a href="{{ route('krctStaff') }}" class="menu-link">
             <div class="text-truncate" data-i18n="Gallery">Staff</div>
           </a>
         </li>

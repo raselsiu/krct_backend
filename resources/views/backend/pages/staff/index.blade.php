@@ -5,8 +5,8 @@
 
       <div class="card">
                 <div class="header_info">
-                  <h5 class="card-header">Board Of Trustees</h5>
-                  <a href="{{ route('createBOT') }}" class="btn btn-sm btn-primary">Create B.O.Trustees</a>
+                  <h5 class="card-header">Staff</h5>
+                  <a href="{{ route('createStaff') }}" class="btn btn-sm btn-primary">Create Staff Profile</a>
                 </div>
                 <div class="table-responsive text-nowrap">
                   <table class="table">
@@ -21,7 +21,7 @@
                     <tbody class="table-border-bottom-0">
                         @foreach ($bot as $data)
                     <tr>
-                        <td><img src="{{ asset('images/bot/'.$data->image) }}" alt="event_image" width="30"></td>
+                        <td><img src="{{ asset('images/staff/'.$data->image) }}" alt="event_image" width="30"></td>
                         <td>{{ $data->name }}</td>
                         <td>{{ $data->designation }}</td>
                         <td>
@@ -30,10 +30,10 @@
                               <i class="icon-base bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="{{ route('viewBOT',$data->id) }}"><i class="icon-base bx bx-edit-alt me-1"></i> View</a>
+                              <a class="dropdown-item" href="{{ route('viewStaff',$data->id) }}"><i class="icon-base bx bx-edit-alt me-1"></i> View</a>
                               <button class="dropdown-item delete-btn"  data-id="{{ $data->id }}"> <i class=" icon-base bx bx-trash me-1"></i> Delete</button>
                               <form id="delete-form-{{ $data->id }}" 
-                                    action="{{ route('deleteBOT', $data->id) }}" 
+                                    action="{{ route('deleteStaff', $data->id) }}" 
                                     method="POST" style="display: none;">
                                   @csrf
                                   @method('DELETE')

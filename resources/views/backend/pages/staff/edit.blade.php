@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="card">
-        <h5 class="card-header">Update B.O.T</h5>
+        <h5 class="card-header">Update Staff Profile</h5>
         <div class="card-body">
-            <form action="{{ route('updateBOT',$data->id) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('updateStaff',$data->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-4">

@@ -24,7 +24,7 @@
 						<div class="d-flex align-items-center flex-wrap">
 
 							<div class="d-flex align-items-center flex-wrap">
-								<a class="theme-btn ticket-btn" href="#">অনলাইনে সিরিয়াল কাটুন</a>
+								<a class="theme-btn ticket-btn" href="{{ route('onlineSerialIndex') }}">অনলাইনে সিরিয়াল কাটুন</a>
 							</div>
 
 						</div>
@@ -205,7 +205,7 @@
                                 <div class="speaker-block_one col-lg-4 col-md-4 col-sm-6">
 									<div class="speaker-block_one-inner">
 										<div class="speaker-block_one-image">
-											<img src="assets/images/background/krct/trust_members/kawser-02.png" alt="" />
+											<img src="{{ asset('frontend/assets/images/background/krct/trust_members/kawser-02.png') }}" alt="" />
 										</div>
 										<div class="speaker-block_one-content">
 											<!-- Social Box -->
@@ -254,91 +254,6 @@
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                     <a href="assets/images/gallery/medical_camp/1.jpg">
                         <figure><img class="img-fluid img-thumbnail" src="assets/images/gallery/medical_camp/1.jpg" alt="Student Image"></figure>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a href="assets/images/gallery/medical_camp/2.jpg">
-                        <figure><img class="img-fluid img-thumbnail" src="assets/images/gallery/medical_camp/2.jpg" alt="Student Image"></figure>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a href="assets/images/gallery/medical_camp/3.jpg">
-                        <figure><img class="img-fluid img-thumbnail" src="assets/images/gallery/medical_camp/3.jpg" alt="Student Image"></figure>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a href="assets/images/gallery/medical_camp/4.jpg">
-                        <figure><img class="img-fluid img-thumbnail" src="assets/images/gallery/medical_camp/4.jpg" alt="Student Image"></figure>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a href="assets/images/gallery/medical_camp/5.jpg">
-                        <figure><img class="img-fluid img-thumbnail" src="assets/images/gallery/medical_camp/5.jpg" alt="Student Image"></figure>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a href="assets/images/gallery/medical_camp/6.jpg">
-                        <figure><img class="img-fluid img-thumbnail" src="assets/images/gallery/medical_camp/6.jpg" alt="Student Image"></figure>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a href="assets/images/gallery/medical_camp/7.jpg">
-                        <figure><img class="img-fluid img-thumbnail" src="assets/images/gallery/medical_camp/7.jpg" alt="Student Image"></figure>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a href="assets/images/gallery/medical_camp/8.jpg">
-                        <figure><img class="img-fluid img-thumbnail" src="assets/images/gallery/medical_camp/8.jpg" alt="Student Image"></figure>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a href="assets/images/gallery/medical_camp/9.jpg">
-                        <figure><img class="img-fluid img-thumbnail" src="assets/images/gallery/medical_camp/9.jpg" alt="Student Image"></figure>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a href="assets/images/gallery/medical_camp/10.jpg">
-                        <figure><img class="img-fluid img-thumbnail" src="assets/images/gallery/medical_camp/10.jpg" alt="Student Image"></figure>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a href="assets/images/gallery/medical_camp/11.jpg">
-                        <figure><img class="img-fluid img-thumbnail" src="assets/images/gallery/medical_camp/11.jpg" alt="Student Image"></figure>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a href="assets/images/gallery/medical_camp/12.jpg">
-                        <figure><img class="img-fluid img-thumbnail" src="assets/images/gallery/medical_camp/12.jpg" alt="Student Image"></figure>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a href="assets/images/gallery/medical_camp/13.jpg">
-                        <figure><img class="img-fluid img-thumbnail" src="assets/images/gallery/medical_camp/13.jpg" alt="Student Image"></figure>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a href="assets/images/gallery/medical_camp/14.jpg">
-                        <figure><img class="img-fluid img-thumbnail" src="assets/images/gallery/medical_camp/14.jpg" alt="Student Image"></figure>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a href="assets/images/gallery/medical_camp/15.jpg">
-                        <figure><img class="img-fluid img-thumbnail" src="assets/images/gallery/medical_camp/15.jpg" alt="Student Image"></figure>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a href="assets/images/gallery/medical_camp/16.jpg">
-                        <figure><img class="img-fluid img-thumbnail" src="assets/images/gallery/medical_camp/16.jpg" alt="Student Image"></figure>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a href="assets/images/gallery/medical_camp/17.jpg">
-                        <figure><img class="img-fluid img-thumbnail" src="assets/images/gallery/medical_camp/17.jpg" alt="Student Image"></figure>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a href="assets/images/gallery/medical_camp/18.jpg">
-                        <figure><img class="img-fluid img-thumbnail" src="assets/images/gallery/medical_camp/18.jpg" alt="Student Image"></figure>
                     </a>
                 </div>
             </div>

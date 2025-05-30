@@ -13,10 +13,12 @@ use App\Http\Controllers\backend\NewsAndArticleController;
 use App\Http\Controllers\backend\ServicesController;
 use App\Http\Controllers\backend\SliderController;
 use App\Http\Controllers\backend\SmallGalleryController;
+use App\Http\Controllers\backend\StaffController;
 use App\Http\Controllers\backend\TestimonialController;
 use App\Http\Controllers\backend\TopHeaderController;
 use App\Http\Controllers\backend\VolunteerController;
 use App\Http\Controllers\frontend\ContactController;
+use App\Http\Controllers\frontend\OnlinePatientSerialController;
 use App\Http\Controllers\frontend\PageController;
 use App\Http\Controllers\frontend\VolunteerRegiController;
 use App\Http\Controllers\HomeController;
@@ -176,32 +178,18 @@ Route::middleware(['auth'])->group(function () {
     Route::get('dashboard/board-of-trustees/edit/{id}',[BoardOfTrusteesController::class,'edit'])->name('editBOT');
     Route::post('dashboard/board-of-trustees/update/{id}',[BoardOfTrusteesController::class,'update'])->name('updateBOT');
     Route::delete('dashboard/board-of-trustees/delete/{id}',[BoardOfTrusteesController::class,'destroy'])->name('deleteBOT');
+
+
+    // Board Of Trustees
+    Route::get('dashboard/staff',[StaffController::class,'index'])->name('krctStaff');
+    Route::get('dashboard/staff/create',[StaffController::class,'create'])->name('createStaff');
+    Route::get('dashboard/staff/view/{id}',[StaffController::class,'view'])->name('viewStaff');
+    Route::post('dashboard/staff/save',[StaffController::class,'store'])->name('storeStaff');
+    Route::get('dashboard/staff/edit/{id}',[StaffController::class,'edit'])->name('editStaff');
+    Route::post('dashboard/staff/update/{id}',[StaffController::class,'update'])->name('updateStaff');
+    Route::delete('dashboard/staff/delete/{id}',[StaffController::class,'destroy'])->name('deleteStaff');
     
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -223,7 +211,7 @@ Route::get('/event',[PageController::class,'event'])->name('event');
 
 Route::get('/gallery',[PageController::class,'gallery'])->name('gallery');
 
-Route::get('/medical_corner',[PageController::class,'medical_corner'])->name('medical_corner');
+Route::get('/medical-corner',[PageController::class,'medical_corner'])->name('medical_corner');
 
 Route::get('/news',[PageController::class,'news'])->name('news');
 
@@ -240,6 +228,16 @@ Route::get('/volunteer',[PageController::class,'volunteer'])->name('volunteer');
 Route::get('/volunteer-registration',[PageController::class,'volunteer_regi'])->name('volunteer_regi');
 
 // ================================= FRONTEND END =======================================================================
+
+
+// ==================================== Patient Online Serial No. ===================================
+
+    Route::get('/medical-corner/get-online-serial',[OnlinePatientSerialController::class,'index'])->name('onlineSerialIndex');
+    Route::get('/medical-corner/get-online-serial/patient-serial-show/{id}',[OnlinePatientSerialController::class,'patientSerialShow'])->name('patientSerialShow');
+    Route::post('/medical-corner/get-online-serial/booking/',[OnlinePatientSerialController::class,'submitData'])->name('storeDataMakeSerial');
+
+
+// ==================================== Patient Online Serial No. End ===============================
 
 
 

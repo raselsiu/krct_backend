@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('staff', function (Blueprint $table) {
             $table->id();
+            $table->string('image')->nullable();
+            $table->string('name');
+            $table->text('designation');
+            $table->string('fb')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('insta')->nullable();
+            $table->string('yt')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
