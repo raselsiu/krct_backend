@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\backend\AboutUsController;
+use App\Http\Controllers\backend\BoardOfTrusteesController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\ChairPersionController;
 use App\Http\Controllers\backend\ContactController as BackendContactController;
@@ -11,6 +12,8 @@ use App\Http\Controllers\backend\MissionVissionController;
 use App\Http\Controllers\backend\NewsAndArticleController;
 use App\Http\Controllers\backend\ServicesController;
 use App\Http\Controllers\backend\SliderController;
+use App\Http\Controllers\backend\SmallGalleryController;
+use App\Http\Controllers\backend\TestimonialController;
 use App\Http\Controllers\backend\TopHeaderController;
 use App\Http\Controllers\backend\VolunteerController;
 use App\Http\Controllers\frontend\ContactController;
@@ -109,7 +112,7 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('dashboard/gallery/delete/{id}',[GalleryController::class,'destroy'])->name('deleteGallery');
 
 
-    // Gallry 
+    // Category Controller 
     Route::get('dashboard/category',[CategoryController::class,'index'])->name('category');
     Route::get('dashboard/category/create',[CategoryController::class,'create'])->name('createCategory');
     Route::post('dashboard/category/store',[CategoryController::class,'store'])->name('storeCategory');
@@ -143,6 +146,36 @@ Route::middleware(['auth'])->group(function () {
     Route::get('dashboard/donate-now/edit/{id}',[DonateNowController::class,'edit'])->name('editDonateNow');
     Route::post('dashboard/donate-now/update/{id}',[DonateNowController::class,'update'])->name('updateDonateNow');
     Route::delete('dashboard/donate-now/delete/{id}',[DonateNowController::class,'destroy'])->name('deleteDonateNow');
+
+    // Testimonial
+    Route::get('dashboard/testimonial',[TestimonialController::class,'index'])->name('testimonial');
+    Route::get('dashboard/testimonial/create',[TestimonialController::class,'create'])->name('createTestimonial');
+    Route::get('dashboard/testimonial/view/{id}',[TestimonialController::class,'view'])->name('viewTestimonial');
+    Route::post('dashboard/testimonial/save',[TestimonialController::class,'store'])->name('storeTestimonial');
+    Route::get('dashboard/testimonial/edit/{id}',[TestimonialController::class,'edit'])->name('editTestimonial');
+    Route::post('dashboard/testimonial/update/{id}',[TestimonialController::class,'update'])->name('updateTestimonial');
+    Route::delete('dashboard/testimonial/delete/{id}',[TestimonialController::class,'destroy'])->name('deleteTestimonial');
+
+
+    // Small Footer Gallery 
+    Route::get('dashboard/footer-gallery',[SmallGalleryController::class,'index'])->name('smallGallery');
+    Route::get('dashboard/footer-gallery/create',[SmallGalleryController::class,'create'])->name('createSmallGallery');
+    Route::get('dashboard/footer-gallery/view/{id}',[SmallGalleryController::class,'view'])->name('viewSmallGallery');
+    Route::post('dashboard/footer-gallery/save',[SmallGalleryController::class,'store'])->name('storeSmallGallery');
+    Route::get('dashboard/footer-gallery/edit/{id}',[SmallGalleryController::class,'edit'])->name('editSmallGallery');
+    Route::post('dashboard/footer-gallery/update/{id}',[SmallGalleryController::class,'update'])->name('updateSmallGallery');
+    Route::delete('dashboard/footer-gallery/delete/{id}',[SmallGalleryController::class,'destroy'])->name('deleteSmallGallery');
+
+
+
+    // Board Of Trustees
+    Route::get('dashboard/board-of-trustees',[BoardOfTrusteesController::class,'index'])->name('bot');
+    Route::get('dashboard/board-of-trustees/create',[BoardOfTrusteesController::class,'create'])->name('createBOT');
+    Route::get('dashboard/board-of-trustees/view/{id}',[BoardOfTrusteesController::class,'view'])->name('viewBOT');
+    Route::post('dashboard/board-of-trustees/save',[BoardOfTrusteesController::class,'store'])->name('storeBOT');
+    Route::get('dashboard/board-of-trustees/edit/{id}',[BoardOfTrusteesController::class,'edit'])->name('editBOT');
+    Route::post('dashboard/board-of-trustees/update/{id}',[BoardOfTrusteesController::class,'update'])->name('updateBOT');
+    Route::delete('dashboard/board-of-trustees/delete/{id}',[BoardOfTrusteesController::class,'destroy'])->name('deleteBOT');
     
 });
 

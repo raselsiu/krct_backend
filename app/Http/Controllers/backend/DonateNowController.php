@@ -63,7 +63,6 @@ class DonateNowController extends Controller
 
 
 
-
     public function destroy(string $id)
     {
         $data = DonateNow::findOrFail($id);

@@ -90,15 +90,15 @@
 											<li><a href="{{ url('/') }}">Home</a></li>
 											<li><a href="#about_us">About Us</a></li>
 											<li><a href="#service">Services</a></li>
-											<li><a href="events.html">Events</a></li>
-											<li><a href="trustees.html">Board of Trustees</a></li>
+											<li><a href="{{ route('event') }}">Events</a></li>
+											<li><a href="{{ route('trustees') }}">Board of Trustees</a></li>
 											<li class="dropdown"><a href="#">Team</a>
 												<ul>
-													<li><a href="staff.html">Staff</a></li>
-													<li><a href="volunteer.html">Volunteers</a></li>
+													<li><a href="{{ route('staff') }}">Staff</a></li>
+													<li><a href="{{ route('volunteer') }}">Volunteers</a></li>
 												</ul>
 											</li>
-											<li><a href="gallery.html">Media</a>
+											<li><a href="{{ route('gallery') }}">Media</a>
 												<!-- <ul>
 													<li><a href="student.html">Students</a></li>
 													<li><a href="#">Parents & Sudents</a></li>
@@ -107,8 +107,8 @@
 												</ul> -->
 											</li>
 
-											<li><a href="medical-corner.html">Medical Corner</a></li>
-											<li><a href="news.html">News</a></li>
+											<li><a href="{{ route('medical_corner') }}">Medical Corner</a></li>
+											<li><a href="{{ route('news') }}">News</a></li>
 											<li><a href="{{ route('contact') }}">Contact</a></li>
 										</ul>
 									</div>
@@ -124,7 +124,7 @@
 
 								<!-- Button Box -->
 								<div class="header_button-box">
-									<a href="donation.html" class="btn-style-one">
+									<a href="{{ route('donation') }}" class="btn-style-one">
 										<span class="btn-wrap">
 											<span class="text-one">Donate Now</span>
 											<span class="text-two">Donate Now</span>

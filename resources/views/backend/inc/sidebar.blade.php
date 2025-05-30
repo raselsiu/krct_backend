@@ -65,16 +65,9 @@
     </li>
 
     <li class="menu-item">
-      <a href="cards-basic.html" class="menu-link">
+      <a href="{{ route('bot') }}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div class="text-truncate" data-i18n="Basic">Board Of Trustees</div>
-      </a>
-    </li>
-
-    <li class="menu-item">
-      <a href="cards-basic.html" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-collection"></i>
-        <div class="text-truncate" data-i18n="Basic">Team</div>
       </a>
     </li>
 
@@ -154,11 +147,6 @@
 
 
 
-
-
-
-
-
     <li class="menu-item">
       <a href="cards-basic.html" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
@@ -172,19 +160,24 @@
       </a>
     </li>
     <li class="menu-item">
-      <a href="cards-basic.html" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-collection"></i>
-        <div class="text-truncate" data-i18n="Basic">Volunteer</div>
-      </a>
-    </li>
-    <li class="menu-item">
       <a href="{{ route('donateNow') }}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div class="text-truncate" data-i18n="Basic">Donate Section</div>
       </a>
     </li>
+
     <li class="menu-item">
-      <a href="cards-basic.html" class="menu-link">
+      <a href="{{ route('testimonial') }}" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-collection"></i>
+        <div class="text-truncate" data-i18n="Basic">Testimonial</div>
+      </a>
+    </li>
+
+
+
+
+    <li class="menu-item">
+      <a href="{{ route('smallGallery') }}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div class="text-truncate" data-i18n="Basic">Footer Small Gallery</div>
       </a>
