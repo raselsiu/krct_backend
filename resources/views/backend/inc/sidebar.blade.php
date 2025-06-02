@@ -147,12 +147,29 @@
 
 
 
+
+
+
     <li class="menu-item">
-      <a href="cards-basic.html" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-collection"></i>
-        <div class="text-truncate" data-i18n="Basic">Medical Corner</div>
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-home-smile"></i>
+        <div class="text-truncate" data-i18n="Dashboards">Medical Info</div>
       </a>
+      <ul class="menu-sub">
+        <li class="menu-item active">
+          <a href="" class="menu-link">
+            <div class="text-truncate" data-i18n="Gallery">Online Serial</div>
+          </a>
+        </li>
+        <li class="menu-item active">
+          <a href="" class="menu-link">
+            <div class="text-truncate" data-i18n="Analytics">Page Info Setup</div>
+          </a>
+        </li>
+      </ul>
     </li>
+
+
     <li class="menu-item">
       <a href="{{ route('newsAndArticles') }}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>

@@ -10,6 +10,7 @@ use App\Http\Controllers\backend\EventNoticeController;
 use App\Http\Controllers\backend\GalleryController;
 use App\Http\Controllers\backend\MissionVissionController;
 use App\Http\Controllers\backend\NewsAndArticleController;
+use App\Http\Controllers\backend\OnlineSerialController;
 use App\Http\Controllers\backend\ServicesController;
 use App\Http\Controllers\backend\SliderController;
 use App\Http\Controllers\backend\SmallGalleryController;
@@ -169,7 +170,6 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('dashboard/footer-gallery/delete/{id}',[SmallGalleryController::class,'destroy'])->name('deleteSmallGallery');
 
 
-
     // Board Of Trustees
     Route::get('dashboard/board-of-trustees',[BoardOfTrusteesController::class,'index'])->name('bot');
     Route::get('dashboard/board-of-trustees/create',[BoardOfTrusteesController::class,'create'])->name('createBOT');
@@ -188,6 +188,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('dashboard/staff/edit/{id}',[StaffController::class,'edit'])->name('editStaff');
     Route::post('dashboard/staff/update/{id}',[StaffController::class,'update'])->name('updateStaff');
     Route::delete('dashboard/staff/delete/{id}',[StaffController::class,'destroy'])->name('deleteStaff');
+
+
+    // Backend Online Controller 
+    Route::get('dashboard/online-serial-controller',[OnlineSerialController::class,'index'])->name('serial');
     
 });
 
@@ -234,7 +238,7 @@ Route::get('/volunteer-registration',[PageController::class,'volunteer_regi'])->
 
     Route::get('/medical-corner/get-online-serial',[OnlinePatientSerialController::class,'index'])->name('onlineSerialIndex');
     Route::get('/medical-corner/get-online-serial/patient-serial-show/{id}',[OnlinePatientSerialController::class,'patientSerialShow'])->name('patientSerialShow');
-    Route::post('/medical-corner/get-online-serial/booking/',[OnlinePatientSerialController::class,'submitData'])->name('storeDataMakeSerial');
+    Route::post('/medical-corner/get-online-serial/booking/',[OnlinePatientSerialController::class,'submitData'])   ->name('storeDataMakeSerial');
 
 
 // ==================================== Patient Online Serial No. End ===============================
