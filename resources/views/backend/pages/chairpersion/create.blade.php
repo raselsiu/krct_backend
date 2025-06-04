@@ -44,25 +44,19 @@
                 <div class="mb-4">
                     <label for="fb" class="form-label">Facebook</label>
                     <input type="text" name="fb" class="form-control" placeholder="facebook.com/ID_NO">
-                    @if ($errors->has('fb'))
-                        <small style="color: red">{{ $errors->first('fb') }}</small>
-                    @endif
+          
                 </div>
 
                 <div class="mb-4">
                     <label for="twit" class="form-label">X ID (previously known as a Twitter ID)</label>
                     <input type="text" name="twit" class="form-control" placeholder="x.com/34234234">
-                    @if ($errors->has('twit'))
-                        <small style="color: red">{{ $errors->first('twit') }}</small>
-                    @endif
+          
                 </div>
 
                  <div class="mb-4">
                     <label for="yt" class="form-label">Youtube</label>
                     <input type="text" name="yt" class="form-control" placeholder="youtube.com/channel_name">
-                    @if ($errors->has('yt'))
-                        <small style="color: red">{{ $errors->first('yt') }}</small>
-                    @endif
+          
                 </div>
 
                 <button type="submit" class="btn btn-primary">Save</button>

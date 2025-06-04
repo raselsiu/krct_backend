@@ -25,9 +25,6 @@ class ChairPersionController extends Controller
             'name' => 'required',
             'designation' => 'required',
             'description' => 'required',
-            'fb' => 'required',
-            'twit' => 'required',
-            'yt' => 'required',
         ]);
 
             // Image insertion

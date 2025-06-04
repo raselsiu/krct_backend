@@ -176,6 +176,15 @@
         <div class="text-truncate" data-i18n="Basic">News & Articles</div>
       </a>
     </li>
+
+    
+    <li class="menu-item">
+      <a href="{{ route('becomeVolunteer') }}" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-collection"></i>
+        <div class="text-truncate" data-i18n="Basic">Become Volunteer</div>
+      </a>
+    </li>
+
     <li class="menu-item">
       <a href="{{ route('donateNow') }}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>

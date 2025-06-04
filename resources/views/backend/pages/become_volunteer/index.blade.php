@@ -5,33 +5,33 @@
 
       <div class="card">
                 <div class="header_info">
-                  <h5 class="card-header">Donate Now Section</h5>
-                  <a href="{{ route('createDonateNow') }}" class="btn btn-sm btn-primary">Create Section</a> 
+                  <h5 class="card-header">Become Volunteer</h5>
+                  <a href="{{ route('createBecomeVolunteer') }}" class="btn btn-sm btn-primary">Create</a>
                 </div>
                 <div class="table-responsive text-nowrap">
                   <table class="table">
                     <thead class="table-dark">
                       <tr>
-                        <th>Title</th>
-                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Descriptions</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        @foreach ($event as $data)
+                        @foreach ($desc as $data)
                     <tr>
-                        <td>{{ Str::limit($data->title,20) }}</td>
-                        <td>{{ Str::limit($data->desc,20) }}</td>
+                       <td><img src="{{ asset('images/'.$data->image) }}" alt="image" width="100"></td>
+                       <td>{{ Str::limit($data->desc, 40 ) }}</td>
                         <td>
                           <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                               <i class="icon-base bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="{{ route('viewDonateNow',$data->id) }}"><i class="icon-base bx bx-edit-alt me-1"></i> View</a>
+                              <a class="dropdown-item" href="{{ route('editBecomeVolunteer',$data->id) }}"><i class="icon-base bx bx-edit-alt me-1"></i> View</a>
                               <button class="dropdown-item delete-btn"  data-id="{{ $data->id }}"> <i class=" icon-base bx bx-trash me-1"></i> Delete</button>
                               <form id="delete-form-{{ $data->id }}" 
-                                    action="{{ route('deleteDonateNow', $data->id) }}" 
+                                    action="{{ route('deleteBecomeVolunteer', $data->id) }}" 
                                     method="POST" style="display: none;">
                                   @csrf
                                   @method('DELETE')

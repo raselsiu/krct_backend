@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\backend\AboutUsController;
+use App\Http\Controllers\backend\BecomeVolunteerController;
 use App\Http\Controllers\backend\BoardOfTrusteesController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\ChairPersionController;
@@ -23,11 +24,37 @@ use App\Http\Controllers\frontend\OnlinePatientSerialController;
 use App\Http\Controllers\frontend\PageController;
 use App\Http\Controllers\frontend\VolunteerRegiController;
 use App\Http\Controllers\HomeController;
+use App\Models\AboutUs;
+use App\Models\BecomeVolunteer;
+use App\Models\ChairPersion;
+use App\Models\DonateNow;
+use App\Models\EventNotice;
+use App\Models\Gallery;
+use App\Models\MissionVission;
+use App\Models\NewsAndArticle;
+use App\Models\Services;
+use App\Models\Slider;
+use App\Models\SmallGallery;
+use App\Models\Testimonial;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $data['data']=Slider::all();
+    $data['events'] = EventNotice::orderBy('created_at','desc')->first();
+    $data['aboutUs'] = AboutUs::orderBy('created_at','desc')->first();
+    $data['mv'] = MissionVission::orderBy('created_at','desc')->first();
+    $data['chair'] = ChairPersion::orderBy('created_at','desc')->first();
+    $data['services'] = Services::orderBy('created_at','asc')->get();
+    $data['gallery'] = Gallery::orderBy('created_at','asc')->get();
+    $data['allNews'] = NewsAndArticle::orderBy('created_at','desc')->get();
+    $data['bcmVolunteer'] = BecomeVolunteer::orderBy('created_at','desc')->first();
+    $data['donation'] = DonateNow::orderBy('created_at','asc')->first();
+    $data['testimonial'] = Testimonial::orderBy('created_at','desc')->get();
+    $data['smGallery'] = SmallGallery::orderBy('created_at','desc')->get();
+
+    return view('welcome',$data);   
 });
 
 Auth::routes();
@@ -188,6 +215,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('dashboard/staff/edit/{id}',[StaffController::class,'edit'])->name('editStaff');
     Route::post('dashboard/staff/update/{id}',[StaffController::class,'update'])->name('updateStaff');
     Route::delete('dashboard/staff/delete/{id}',[StaffController::class,'destroy'])->name('deleteStaff');
+
+
+    // Become Volunteer
+    Route::get('dashboard/become-volunteer',[BecomeVolunteerController::class,'index'])->name('becomeVolunteer');
+    Route::get('dashboard/become-volunteer/create',[BecomeVolunteerController::class,'create'])->name('createBecomeVolunteer');
+    Route::post('dashboard/become-volunteer/store',[BecomeVolunteerController::class,'store'])->name('storeBecomeVolunteer');
+    Route::get('dashboard/become-volunteer/edit/{id}',[BecomeVolunteerController::class,'edit'])->name('editBecomeVolunteer');
+    Route::post('dashboard/become-volunteer/update/{id}',[BecomeVolunteerController::class,'update'])->name('updateBecomeVolunteer');
+    Route::delete('dashboard/become-volunteer/delete/{id}',[BecomeVolunteerController::class,'destroy'])->name('deleteBecomeVolunteer');
 
 
     // Backend Online Controller 

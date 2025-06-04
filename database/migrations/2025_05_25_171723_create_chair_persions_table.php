@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('designation');
             $table->longText('description');
             $table->string('image');
-            $table->string('fb');
-            $table->string('twit');
-            $table->string('yt');
+            $table->string('fb')->nullable();
+            $table->string('twit')->nullable();
+            $table->string('yt')->nullable();
             $table->timestamps();
         });
     }
